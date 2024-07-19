@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     const form = document.getElementById("registration-form")
-    const feedBackDiv = document.getElementById("form-feedback")
+    const feedbackDiv = document.getElementById("form-feedback")
 
     form.addEventListener("submit", (event) => {
         // preventing default form behavior
@@ -34,16 +34,13 @@ document.addEventListener("DOMContentLoaded", function() {
             messages.push("Password is too short !")
         }
 
-        feedBackDiv.style.display = "block"
-
+        feedbackDiv.style.display = "block"
         if (isValid) {
-            // registration successfull
-            feedBackDiv.textContent = "Registration successful!"
-            feedBackDiv.style.color = "#28a745"
+            feedbackDiv.textContent = "Registration successful!"
+            feedbackDiv.style.color = "#28a745"
         } else {
-            // display error messages
-            feedBackDiv.innerHTML = messages.join("<br/>")
-            feedBackDiv.style.color = "#dc3545"
+            feedbackDiv.innerHTML = messages.join("<br/>")
+            feedbackDiv.style.color = "#dc3545"
         }
     })
 })
